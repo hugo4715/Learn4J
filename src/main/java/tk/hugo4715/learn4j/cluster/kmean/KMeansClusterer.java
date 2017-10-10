@@ -18,13 +18,15 @@ import tk.hugo4715.learn4j.util.Utils;
 
 /**
  * This is a KMean clusterer implementing the Lloyd's algorithm
+ * If you want a better algorithm, you may want to take a look at {@link KMeansPlusPlusClusterer}
+ * 
  * Using a different distance function other than (squared) Euclidean distance may stop the algorithm from converging
  * @see
  * <a href=https://en.wikipedia.org/wiki/K-means_clustering>Wikipedia page <br/>
  * {@link KMeanClustererConfig}
  */
 @AllArgsConstructor
-public class KMeanClusterer implements Clusterer {
+public class KMeansClusterer implements Clusterer {
 	
 	@Getter @Setter protected KMeanClustererConfig config;
 	
@@ -47,7 +49,7 @@ public class KMeanClusterer implements Clusterer {
 			
 			//add each point to the closest cluster 
 			set.getContent().forEach(point -> {
-				centroids.get(getClosestCentroid(point, centroids.keySet())).add(point);
+				centroids.get(Utils.getClosestPoint(point, centroids.keySet(), config.getDistance())).add(point);
 			});
 			
 			//Update step
@@ -99,7 +101,7 @@ public class KMeanClusterer implements Clusterer {
 		Map<double[],List<double[]>> centroids = new HashMap<>();
 		clusters.forEach(c -> centroids.put(c, new ArrayList<>()));
 		set.getContent().forEach(point -> {
-			centroids.get(getClosestCentroid(point, centroids.keySet())).add(point);
+			centroids.get(Utils.getClosestPoint(point, centroids.keySet(), config.getDistance())).add(point);
 		});
 		
 		int i = 0;
@@ -117,25 +119,5 @@ public class KMeanClusterer implements Clusterer {
 	}
 	
 	
-	/**
-	 * Return the closest centroid of a point
-	 * @param point The point
-	 * @param centroids a set of available centroids
-	 * @return One of the centroids in the set
-	 */
-	protected double[] getClosestCentroid(double[] point, Set<double[]> centroids){
-		double[] best = null;
-		double min = Double.MAX_VALUE;
-		
-		for(double[] c : centroids){
-			double dist = config.getDistance().measure(point, c);
-			
-			if(dist < min){
-				best = c;
-				min = dist;
-			}
-		}
-		
-		return best;
-	}
+	
 }

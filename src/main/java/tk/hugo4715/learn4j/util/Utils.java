@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import tk.hugo4715.learn4j.distance.Distance;
+
 public class Utils {
 	public static double sum(double[] a){
 		double value = 0;
@@ -31,6 +33,29 @@ public class Utils {
 			if(pointA[i] != pointB[i])return false;
 		}
 		return true;
+	}
+	
+	/**
+	 * Return the closest neighbour of a point
+	 * @param point The point
+	 * @param neighbours a set of available neighbours
+	 * @param distance The distance to use
+	 * @return the closest neighbours in the set
+	 */
+	public static double[] getClosestPoint(double[] point, Set<double[]> neighbours,Distance distance){
+		double[] best = null;
+		double min = Double.MAX_VALUE;
+		
+		for(double[] c : neighbours){
+			double dist = distance.measure(point, c);
+			
+			if(dist < min){
+				best = c;
+				min = dist;
+			}
+		}
+		
+		return best;
 	}
 	
 	///////////////////////////////

@@ -10,32 +10,30 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.DefaultXYDataset;
 
 import tk.hugo4715.learn4j.cluster.Clusterer;
-import tk.hugo4715.learn4j.cluster.kmean.KMeanClusterer;
-import tk.hugo4715.learn4j.cluster.kmean.KMeanClustererConfig;
-import tk.hugo4715.learn4j.cluster.linkage.CompleteLinkageClusterer;
-import tk.hugo4715.learn4j.cluster.linkage.LinkageClustererConfig;
-import tk.hugo4715.learn4j.cluster.linkage.SingleLinkageClusterer;
+import tk.hugo4715.learn4j.cluster.kmean.KMeansClusterer;
+import tk.hugo4715.learn4j.cluster.kmean.KMeansClustererConfig;
+import tk.hugo4715.learn4j.cluster.kmean.KMeansPlusPlusClusterer;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 
 /**
- * An example to show how to find clusters in a dataset using the KMeanClusterer
+ * An example to show how to find clusters in a dataset using the KMeanClusterer (or KMeansPlusPlusClusterer)
  * @see 
- * {@link KMeanClusterer} <br/> 
- * {@link KMeanClustererConfig}
+ * {@link KMeansClusterer} <br/> 
+ * {@link KMeansClustererConfig}
  */
 public class KMeanClustererExample {
 
 	public static void main(String[] args) throws Exception{
 		
 		//create the config using the builder
-		KMeanClustererConfig config = KMeanClustererConfig.builder()
+		KMeansClustererConfig config = KMeansClustererConfig.builder()
 				.distance(new EuclidianSquaredDistance())//choose a distance measure
 				.clusterAmount(2)//try to find clusters
 				.build();
 
-		Clusterer c = new KMeanClusterer(config);
+		Clusterer c = new KMeansPlusPlusClusterer(config);
 		
 		//load a dataset
 		Dataset s = CSVDatasetLoader.load(new File("/home/hugo4715/sample.csv"));

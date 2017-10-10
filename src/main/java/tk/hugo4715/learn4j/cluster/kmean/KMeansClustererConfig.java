@@ -6,7 +6,7 @@ import tk.hugo4715.learn4j.distance.Distance;
 
 @Builder
 @Data
-public class KMeanClustererConfig {
+public class KMeansClustererConfig {
 	private Distance distance;
 	private int clusterAmount;
 }
