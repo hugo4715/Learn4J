@@ -29,20 +29,15 @@ public class KMeanClusterer implements Clusterer {
 	@Getter @Setter protected KMeanClustererConfig config;
 	
 	
-	@Override
-	public Dataset[] cluster(Dataset set) {
-		List<double[]> clusters = new ArrayList<>();
-
-		//create n random cluster using existing data points
-		Random rand = new Random();
-		for(int i = 0; i < config.getClusterAmount();i++){
-			double[] selected = null;
-			//ensure we don't select the same point twice
-			while(selected == null || clusters.contains(selected))selected = set.getContent().get(rand.nextInt(set.getContent().size()));
-			clusters.add(selected);
-		}
+	/**
+	 * Get the best centroids to classify this dataset
+	 * @param set A dataset
+	 * @return A list of centroids
+	 */
+	public List<double[]> getBestCentroids(Dataset set){
+		List<double[]> clusters = getStartingCentroids(set);
 		
-		AtomicBoolean done = new AtomicBoolean(false);//true if centroid did not move in the last stp
+		AtomicBoolean done = new AtomicBoolean(false);//true if centroid did not move in the last step
 		
 		while(!done.get()){
 			
@@ -67,7 +62,36 @@ public class KMeanClusterer implements Clusterer {
 			});
 			
 		}
-		
+		return clusters;
+	}
+	
+	/**
+	 * This method exists so it can be inherited (for example KMeans++ just needs to change overwrite this)
+	 * @param set The dataset
+	 * @return The default centroids
+	 */
+	protected List<double[]> getStartingCentroids(Dataset set){
+		List<double[]> clusters = new ArrayList<>();
+
+		//create n random cluster using existing data points
+		Random rand = new Random();
+		for(int i = 0; i < config.getClusterAmount();i++){
+			double[] selected = null;
+			//ensure we don't select the same point twice
+			while(selected == null || clusters.contains(selected))selected = set.getContent().get(rand.nextInt(set.getContent().size()));
+			clusters.add(selected);
+		}
+		return clusters;
+	}
+	
+	/**
+	 * Cluster the given dataset using the given centroids
+	 * @param set The dataset
+	 * @param centroidList A list of centroids
+	 * @return The clustered datasets
+	 */
+	public Dataset[] cluster(Dataset set,List<double[]> centroidList){
+		List<double[]> clusters = centroidList;
 		
 		//build resulting sets
 		Dataset[] result = new Dataset[clusters.size()];
@@ -84,7 +108,14 @@ public class KMeanClusterer implements Clusterer {
 			i++;
 		}
 		return result;
+		
 	}
+	
+	@Override
+	public Dataset[] cluster(Dataset set) {
+		return cluster(set, getBestCentroids(set));
+	}
+	
 	
 	/**
 	 * Return the closest centroid of a point
