@@ -31,7 +31,7 @@ public class SingleLinkageClustererExample {
 		//create the config using the builder
 		LinkageClustererConfig config = LinkageClustererConfig.builder()
 				.distance(new EuclidianSquaredDistance())//choose a distance measure
-				.clusterAmount(2)//try to find clusters
+				.clusterAmount(3)//try to find clusters
 				.build();
 
 		Clusterer c = new SingleLinkageClusterer(config);

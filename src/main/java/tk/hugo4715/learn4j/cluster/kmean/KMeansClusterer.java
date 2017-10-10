@@ -18,17 +18,17 @@ import tk.hugo4715.learn4j.util.Utils;
 
 /**
  * This is a KMean clusterer implementing the Lloyd's algorithm
- * If you want a better algorithm, you may want to take a look at {@link KMeansPlusPlusClusterer}
+ * If you want a better algorithm, you may want to take a look at {@link KMeansPlusPlusClusterer} <br/>
  * 
  * Using a different distance function other than (squared) Euclidean distance may stop the algorithm from converging
  * @see
  * <a href=https://en.wikipedia.org/wiki/K-means_clustering>Wikipedia page <br/>
- * {@link KMeanClustererConfig}
+ * {@link KMeansClustererConfig}
  */
 @AllArgsConstructor
 public class KMeansClusterer implements Clusterer {
 	
-	@Getter @Setter protected KMeanClustererConfig config;
+	@Getter @Setter protected KMeansClustererConfig config;
 	
 	
 	/**
