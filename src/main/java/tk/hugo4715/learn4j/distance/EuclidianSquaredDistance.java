@@ -1,6 +1,6 @@
 package tk.hugo4715.learn4j.distance;
 
-import tk.hugo4715.learn4j.util.ArrayUtils;
+import tk.hugo4715.learn4j.util.Utils;
 
 public class EuclidianSquaredDistance implements Distance {
 
@@ -10,7 +10,7 @@ public class EuclidianSquaredDistance implements Distance {
 		for (int i = 0; i < deltas.length; i++) {
 			deltas[i] = Math.pow(pointA[i]-pointB[i], 2);
 		}
-		return ArrayUtils.sum(deltas);
+		return Utils.sum(deltas);
 	}
 
 }

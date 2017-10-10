@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.gui;
+package tk.hugo4715.learn4j;
 
 import java.io.File;
 
@@ -24,14 +24,14 @@ import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
  * {@link CompleteLinkageClusterer} <br/>
  * {@link LinkageClustererConfig}
  */
-public class SingleLinkageExample {
+public class SingleLinkageClustererExample {
 
 	public static void main(String[] args) throws Exception{
 		
 		//create the config using the builder
 		LinkageClustererConfig config = LinkageClustererConfig.builder()
 				.distance(new EuclidianSquaredDistance())//choose a distance measure
-				.clusterAmount(3)//try to find 4 clusters
+				.clusterAmount(2)//try to find clusters
 				.build();
 
 		Clusterer c = new SingleLinkageClusterer(config);
