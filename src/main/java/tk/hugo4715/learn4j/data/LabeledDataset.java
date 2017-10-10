@@ -6,6 +6,11 @@ import java.util.Map;
 
 import tk.hugo4715.learn4j.label.Label;
 
+/**
+ * Represent a dataset with labels
+ * @see 
+ * {@link Dataset}
+ */
 public class LabeledDataset extends Dataset {
 	protected List<Label> labels;
 	

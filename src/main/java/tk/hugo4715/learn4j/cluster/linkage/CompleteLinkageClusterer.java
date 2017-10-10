@@ -2,6 +2,13 @@ package tk.hugo4715.learn4j.cluster.linkage;
 
 import java.util.Set;
 
+/**
+ * The CompleteLinkageClusterer is a subclass of the SingleLinkageClusterer and can be used in exactly the same way 
+ * The only difference with his parent is the way the distance is calculated
+ * @see 
+ * <a href=https://en.wikipedia.org/wiki/Complete_linkage_clustering>Wikipedia page <br/>
+ * {@link SingleLinkageClusterer}
+ */
 public class CompleteLinkageClusterer extends SingleLinkageClusterer {
 
 	public CompleteLinkageClusterer(LinkageClustererConfig config) {

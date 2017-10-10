@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility class to quickly load a dataset, currently very basic
+ * TODO add more option (select labels, ignore some columns, etc)
+ * TODO make a dataset saver
+ */
 public class CSVDatasetLoader {
 	public static Dataset load(File file) throws IOException{
 		try(FileReader fr = new FileReader(file);BufferedReader br = new BufferedReader(fr)){

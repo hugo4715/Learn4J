@@ -10,12 +10,20 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.DefaultXYDataset;
 
 import tk.hugo4715.learn4j.cluster.Clusterer;
+import tk.hugo4715.learn4j.cluster.linkage.CompleteLinkageClusterer;
 import tk.hugo4715.learn4j.cluster.linkage.LinkageClustererConfig;
 import tk.hugo4715.learn4j.cluster.linkage.SingleLinkageClusterer;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 
+/**
+ * An example to show how to find clusters in a dataset using the SingleLinkageClusterer
+ * @see 
+ * {@link SingleLinkageClusterer} <br/> 
+ * {@link CompleteLinkageClusterer} <br/>
+ * {@link LinkageClustererConfig}
+ */
 public class SingleLinkageExample {
 
 	public static void main(String[] args) throws Exception{

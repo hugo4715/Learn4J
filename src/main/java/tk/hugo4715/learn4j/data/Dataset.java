@@ -7,7 +7,6 @@ import java.util.Set;
 
 /**
  * Represent a dataset
- * It looks a bit useless since it just wraps a list, but trust me it's not since we can make subclasses, with labels for example
  */
 public class Dataset {
 	protected List<double[]> storage;
