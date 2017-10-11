@@ -10,31 +10,32 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.DefaultXYDataset;
 
 import tk.hugo4715.learn4j.clusterer.Clusterer;
-import tk.hugo4715.learn4j.clusterer.linkage.CompleteLinkageClusterer;
-import tk.hugo4715.learn4j.clusterer.linkage.LinkageClustererConfig;
-import tk.hugo4715.learn4j.clusterer.linkage.SingleLinkageClusterer;
+import tk.hugo4715.learn4j.clusterer.dbscan.DBSCANClusterer;
+import tk.hugo4715.learn4j.clusterer.dbscan.DBSCANClustererConfig;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClusterer;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClustererConfig;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 
 /**
- * An example to show how to find clusters in a dataset using the SingleLinkageClusterer
+ * An example to show how to find clusters in a dataset using the DBSCANClusterer 
  * @see 
- * {@link SingleLinkageClusterer} <br/> 
- * {@link CompleteLinkageClusterer} <br/>
- * {@link LinkageClustererConfig}
+ * {@link DBSCANClusterer} <br/> 
+ * {@link DBSCANClustererConfig}
  */
-public class SingleLinkageClustererExample {
+public class DBSCANClustererExample {
 
 	public static void main(String[] args) throws Exception{
 		
 		//create the config using the builder
-		LinkageClustererConfig config = LinkageClustererConfig.builder()
+		DBSCANClustererConfig config = DBSCANClustererConfig.builder()
 				.distance(new EuclidianSquaredDistance())//choose a distance measure
-				.clusterAmount(3)//try to find clusters
+				.minDistance(3)//count all neighbours within the distance of a point
+				.minDensity(4)//how many neighbours are needed for a point to be a core point
 				.build();
 
-		Clusterer c = new SingleLinkageClusterer(config);
+		Clusterer c = new DBSCANClusterer(config);
 		
 		//load a dataset
 		Dataset s = CSVDatasetLoader.load(new File("/home/hugo4715/sample.csv"));

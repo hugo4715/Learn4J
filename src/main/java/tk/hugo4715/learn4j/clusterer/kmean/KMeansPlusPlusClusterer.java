@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster.kmean;
+package tk.hugo4715.learn4j.clusterer.kmean;
 
 import java.util.ArrayList;
 import java.util.List;

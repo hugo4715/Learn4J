@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster.kmean;
+package tk.hugo4715.learn4j.clusterer.kmean;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import tk.hugo4715.learn4j.cluster.Clusterer;
+import tk.hugo4715.learn4j.clusterer.Clusterer;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.util.Utils;
 
@@ -20,7 +20,7 @@ import tk.hugo4715.learn4j.util.Utils;
  * This is a KMean clusterer implementing the Lloyd's algorithm
  * If you want a better algorithm, you may want to take a look at {@link KMeansPlusPlusClusterer} <br/>
  * 
- * Using a different distance function other than (squared) Euclidean distance may stop the algorithm from converging
+ * Using a distance function other than (squared) Euclidean distance may stop the algorithm from converging
  * @see
  * <a href=https://en.wikipedia.org/wiki/K-means_clustering>Wikipedia page <br/>
  * {@link KMeansClustererConfig}

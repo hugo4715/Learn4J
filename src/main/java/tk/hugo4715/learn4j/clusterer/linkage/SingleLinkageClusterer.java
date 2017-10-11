@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster.linkage;
+package tk.hugo4715.learn4j.clusterer.linkage;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import tk.hugo4715.learn4j.cluster.Clusterer;
+import tk.hugo4715.learn4j.clusterer.Clusterer;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.util.Pair;
 

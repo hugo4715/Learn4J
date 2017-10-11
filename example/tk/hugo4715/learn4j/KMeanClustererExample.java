@@ -9,10 +9,10 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.DefaultXYDataset;
 
-import tk.hugo4715.learn4j.cluster.Clusterer;
-import tk.hugo4715.learn4j.cluster.kmean.KMeansClusterer;
-import tk.hugo4715.learn4j.cluster.kmean.KMeansClustererConfig;
-import tk.hugo4715.learn4j.cluster.kmean.KMeansPlusPlusClusterer;
+import tk.hugo4715.learn4j.clusterer.Clusterer;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClusterer;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClustererConfig;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansPlusPlusClusterer;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;

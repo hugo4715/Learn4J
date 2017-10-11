@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster;
+package tk.hugo4715.learn4j.clusterer;
 
 import tk.hugo4715.learn4j.data.Dataset;
 

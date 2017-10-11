@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster.linkage;
+package tk.hugo4715.learn4j.clusterer.linkage;
 
 import lombok.Builder;
 import lombok.Data;

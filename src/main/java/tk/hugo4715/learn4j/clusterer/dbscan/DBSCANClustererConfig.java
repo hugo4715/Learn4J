@@ -1,4 +1,4 @@
-package tk.hugo4715.learn4j.cluster.dbscan;
+package tk.hugo4715.learn4j.clusterer.dbscan;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,5 +8,6 @@ import tk.hugo4715.learn4j.distance.Distance;
 @Data
 public class DBSCANClustererConfig {
 	private Distance distance;
-	private double mindistance;
+	private double minDistance;
+	private double minDensity;
 }
