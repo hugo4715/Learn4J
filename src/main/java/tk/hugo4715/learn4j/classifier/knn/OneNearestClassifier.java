@@ -12,7 +12,7 @@ import tk.hugo4715.learn4j.label.Label;
 @AllArgsConstructor
 public class OneNearestClassifier<T> implements Classifier<T> {
 
-	@Setter @Getter private OneNearestClassifierConfig<T> config;
+	@Setter private OneNearestClassifierConfig<T> config;
 	
 	
 	@Override
