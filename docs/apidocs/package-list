@@ -1,0 +1,12 @@
+tk.hugo4715.learn4j.classifier
+tk.hugo4715.learn4j.classifier.knn
+tk.hugo4715.learn4j.classifier.nearestcentroid
+tk.hugo4715.learn4j.classifier.perceptron
+tk.hugo4715.learn4j.clusterer
+tk.hugo4715.learn4j.clusterer.dbscan
+tk.hugo4715.learn4j.clusterer.kmean
+tk.hugo4715.learn4j.clusterer.linkage
+tk.hugo4715.learn4j.data
+tk.hugo4715.learn4j.distance
+tk.hugo4715.learn4j.label
+tk.hugo4715.learn4j.util

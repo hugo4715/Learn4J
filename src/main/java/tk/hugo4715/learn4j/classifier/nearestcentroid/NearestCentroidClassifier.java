@@ -7,12 +7,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import lombok.Builder;
 import lombok.Data;
 import tk.hugo4715.learn4j.classifier.Classifier;
 import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Utils;
 
+/**
+ * This classifier uses a k-means to generate the centroids on a training sets, then when it needs to classify a point, it assign labels based on the point distance to the centroids
+ * @param <T> The label types
+ * 
+ * @see
+ * {@link NearestCentroidClassifierConfig}
+ */
 @Data
 public class NearestCentroidClassifier<T> implements Classifier<T> {
 
@@ -48,7 +54,7 @@ public class NearestCentroidClassifier<T> implements Classifier<T> {
 
 	@Override
 	public Map<Label<T>, Double> classify(double[] point) {
-		//find the closest point, and assign the same label to the new point
+		//assign the labels probabilities based on the distance to the centroids
 		
 		Map<Label<T>,Double> map = new HashMap<>();
 		
@@ -68,9 +74,13 @@ public class NearestCentroidClassifier<T> implements Classifier<T> {
 		return result;
 	}
 
+	/**
+	 * This classifier is fuzzy 
+	 * Labels depends on the distance to the centroids
+	 */
 	@Override
 	public boolean isFuzzy() {
-		return false;
+		return true;
 	}
 
 }
