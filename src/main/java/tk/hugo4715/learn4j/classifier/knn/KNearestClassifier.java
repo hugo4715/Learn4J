@@ -11,6 +11,16 @@ import tk.hugo4715.learn4j.classifier.Classifier;
 import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Pair;
 
+/**
+ * This classifier is implementing the K-nearest neighbors algorithm. <br/> 
+ * When searching a point label, the classifier finds the k closest points in the reference set (provided in the config) and assign a probability to each label based on how many neighbors had that label 
+ * 
+ * @param <T> The label type 
+ * 
+ * @see
+ * <a href=https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>Wikipedia Page <br/>
+ * {@link KNearestClassifierConfig}
+ */
 @Data
 @AllArgsConstructor
 public class KNearestClassifier<T> implements Classifier<T> {
@@ -37,13 +47,19 @@ public class KNearestClassifier<T> implements Classifier<T> {
 	}
 
 
-
+	/**
+	 * This classifier is fuzzy <br/>
+	 * Probability of a label = number of time the label appeared in the neighborhood divided by k
+	 */
 	@Override
 	public boolean isFuzzy() {
 		return true;
 	}
 
 
+	/**
+	 * This class hold the k-nearest points 
+	 */
 	private class ClosestPointStorage{
 		@Getter private Map<double[],Double> closest = new HashMap<>();
 		private double[] point;
@@ -53,6 +69,10 @@ public class KNearestClassifier<T> implements Classifier<T> {
 		}
 
 
+		/**
+		 * Check a point, if the distance is lower than the current points or if we do not yet have k points we add the point to the dataset
+		 * @param check The point to compute
+		 */
 		public void compute(double[] check){
 			//check the distance
 			double distance = config.getDistance().measure(point, check);
@@ -60,15 +80,18 @@ public class KNearestClassifier<T> implements Classifier<T> {
 			//get the farthest point in the set
 			Pair<double[],Double> farthest = getFarthest();
 		
-			
+			//if we should use the new point 
 			if(farthest.getLeft() == null || distance < farthest.getRight()){
-				//replace the farthest point with the new point
-				if(closest.size() > config.getK())closest.remove(farthest.getLeft());
-				closest.put(check, distance);
+				if(closest.size() > config.getK())closest.remove(farthest.getLeft());//remove the farthest if we already have at least k points
+				closest.put(check, distance);//add the new point
 			}
 		}
 		
 		
+		/**
+		 * Return the farthest point in the current computed points
+		 * @return A pair in the form (point,distance)
+		 */
 		protected Pair<double[],Double> getFarthest(){
 			double[] farthest = null;
 			double maxDist = 0;

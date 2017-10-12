@@ -34,8 +34,15 @@ public class KNearestClassifierExample {
 		//load a labeled dataset from a file (here labels are Strings)
 		LabeledDataset<String> set = CSVDatasetLoader.loadLabeled(new File("/home/hugo4715/samples/sample2.csv"));
 		
-		//create a KNearestClassifier using a config (reference set is provided in the config), this classifier is trained in the constructor
-		KNearestClassifier<String> classifier = new KNearestClassifier<String>(KNearestClassifierConfig.<String>builder().k(10).dataset(set).distance(new EuclidianSquaredDistance()).build());
+		KNearestClassifierConfig<String> config = KNearestClassifierConfig.
+				<String>builder()
+				.k(10)//specify the k variable
+				.dataset(set)//the reference set
+				.distance(new EuclidianSquaredDistance())
+				.build();
+		
+		//create a KNearestClassifier using a config
+		KNearestClassifier<String> classifier = new KNearestClassifier<String>(config);
 
 		//create a map to store the series
 		Map<Label<String>,Pair<List<Double>,List<Double>>> series = new HashMap<>();//label -> (set of x, set of y)
