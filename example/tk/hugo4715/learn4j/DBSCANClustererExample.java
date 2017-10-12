@@ -19,7 +19,7 @@ import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 
 /**
- * An example to show how to find clusters in a dataset using the DBSCANClusterer 
+ * An example to show how to find clusters in a dataset using the {@link DBSCANClusterer} 
  * @see 
  * {@link DBSCANClusterer} <br/> 
  * {@link DBSCANClustererConfig}

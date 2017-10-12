@@ -20,6 +20,11 @@ import tk.hugo4715.learn4j.data.LabeledDataset;
 import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Pair;
 
+/**
+ * Classify some points using a {@link PerceptronClassifier} 
+ * @see
+ * {@link PerceptronClassifier}
+ */
 public class PerceptronClassifierExample {
 
 	public static void main(String[] args) throws Exception{

@@ -16,19 +16,27 @@ import org.jfree.data.xy.DefaultXYDataset;
 
 import tk.hugo4715.learn4j.classifier.knn.OneNearestClassifier;
 import tk.hugo4715.learn4j.classifier.knn.OneNearestClassifierConfig;
+import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifier;
+import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifierConfig;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.LabeledDataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Pair;
 
+/**
+ * An example to show how to classify some points using the {@link OneNearestClassifier}
+ * @see 
+ * {@link OneNearestClassifier} <br/> 
+ * {@link OneNearestClassifierConfig}
+ */
 public class OneNearestClassifierExample {
 
 	public static void main(String[] args) throws Exception{
 		//load a labeled dataset from a file (here labels are Strings)
 		LabeledDataset<String> set = CSVDatasetLoader.loadLabeled(new File("/home/hugo4715/samples/sample2.csv"));
 		
-		//create a PerceptronClassifier using the dataset, this classifier is trained in the constructor
+		//create a OneNearestClassifier using a config (reference set is provided in the config), this classifier is trained in the constructor
 		OneNearestClassifier<String> classifier = new OneNearestClassifier<String>(OneNearestClassifierConfig.<String>builder().dataset(set).distance(new EuclidianSquaredDistance()).build());
 
 		//create a map to store the series

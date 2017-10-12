@@ -18,7 +18,7 @@ import tk.hugo4715.learn4j.data.Dataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 
 /**
- * An example to show how to find clusters in a dataset using the SingleLinkageClusterer
+ * An example to show how to find clusters in a dataset using the {@link SingleLinkageClusterer} (or {@link CompleteLinkageClusterer}
  * @see 
  * {@link SingleLinkageClusterer} <br/> 
  * {@link CompleteLinkageClusterer} <br/>

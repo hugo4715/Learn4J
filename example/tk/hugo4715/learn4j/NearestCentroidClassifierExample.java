@@ -16,20 +16,30 @@ import org.jfree.data.xy.DefaultXYDataset;
 
 import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifier;
 import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifierConfig;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClusterer;
+import tk.hugo4715.learn4j.clusterer.kmean.KMeansClustererConfig;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.LabeledDataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
 import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Pair;
 
+/**
+ * An example to show how to classify some points using the {@link NearestCentroidClassifier}
+ * @see 
+ * {@link NearestCentroidClassifier} <br/> 
+ * {@link NearestCentroidClassifierConfig}
+ */
 public class NearestCentroidClassifierExample {
 
 	public static void main(String[] args) throws Exception{
 		//load a labeled dataset from a file (here labels are Strings)
 		LabeledDataset<String> set = CSVDatasetLoader.loadLabeled(new File("/home/hugo4715/samples/sample2.csv"));
 		
-		//create a PerceptronClassifier using the dataset, this classifier is trained in the constructor
+		//create a NearestCentroidClassifier using the config
 		NearestCentroidClassifier<String> classifier = new NearestCentroidClassifier<String>(NearestCentroidClassifierConfig.<String>builder().dataset(set).distance(new EuclidianSquaredDistance()).build());
+		
+		//this classifier needs to be reconstructed at creation and every time we add some data 
 		classifier.rebuildCentroids();
 		
 		//create a map to store the series
