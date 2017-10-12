@@ -20,6 +20,4 @@ If you contribute, it would be nice to comment all non obvious parts of your sou
 hugo4715
 
 ## License
-
-TODO
-
+This project is licensed under Apache License 2.0
