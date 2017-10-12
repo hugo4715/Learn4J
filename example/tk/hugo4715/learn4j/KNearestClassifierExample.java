@@ -14,10 +14,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.DefaultXYDataset;
 
-import tk.hugo4715.learn4j.classifier.knn.OneNearestClassifier;
-import tk.hugo4715.learn4j.classifier.knn.OneNearestClassifierConfig;
-import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifier;
-import tk.hugo4715.learn4j.classifier.nearestcentroid.NearestCentroidClassifierConfig;
+import tk.hugo4715.learn4j.classifier.knn.KNearestClassifier;
+import tk.hugo4715.learn4j.classifier.knn.KNearestClassifierConfig;
 import tk.hugo4715.learn4j.data.CSVDatasetLoader;
 import tk.hugo4715.learn4j.data.LabeledDataset;
 import tk.hugo4715.learn4j.distance.EuclidianSquaredDistance;
@@ -25,19 +23,19 @@ import tk.hugo4715.learn4j.label.Label;
 import tk.hugo4715.learn4j.util.Pair;
 
 /**
- * An example to show how to classify some points using the {@link OneNearestClassifier}
+ * An example to show how to classify some points using the {@link KNearestClassifier}
  * @see 
- * {@link OneNearestClassifier} <br/> 
- * {@link OneNearestClassifierConfig}
+ * {@link KNearestClassifier} <br/> 
+ * {@link KNearestClassifierConfig}
  */
-public class OneNearestClassifierExample {
+public class KNearestClassifierExample {
 
 	public static void main(String[] args) throws Exception{
 		//load a labeled dataset from a file (here labels are Strings)
 		LabeledDataset<String> set = CSVDatasetLoader.loadLabeled(new File("/home/hugo4715/samples/sample2.csv"));
 		
-		//create a OneNearestClassifier using a config (reference set is provided in the config), this classifier is trained in the constructor
-		OneNearestClassifier<String> classifier = new OneNearestClassifier<String>(OneNearestClassifierConfig.<String>builder().dataset(set).distance(new EuclidianSquaredDistance()).build());
+		//create a KNearestClassifier using a config (reference set is provided in the config), this classifier is trained in the constructor
+		KNearestClassifier<String> classifier = new KNearestClassifier<String>(KNearestClassifierConfig.<String>builder().k(10).dataset(set).distance(new EuclidianSquaredDistance()).build());
 
 		//create a map to store the series
 		Map<Label<String>,Pair<List<Double>,List<Double>>> series = new HashMap<>();//label -> (set of x, set of y)

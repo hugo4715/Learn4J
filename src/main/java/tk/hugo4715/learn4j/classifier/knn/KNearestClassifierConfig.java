@@ -8,7 +8,8 @@ import tk.hugo4715.learn4j.distance.Distance;
 
 @Builder
 @Data
-public class OneNearestClassifierConfig<T> {
+public class KNearestClassifierConfig<T> {
 	private LabeledDataset<T> dataset;
 	private Distance distance;
+	private int k;
 }
