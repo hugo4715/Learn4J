@@ -12,6 +12,8 @@ TODO
 ### Read the wiki
 Click here to visit the wiki and start coding
 
+### Javadoc
+[The javadoc is available online here.](https://hugo4715.github.io/Learn4J/apidocs/)
 
 ## Contributing
 If you contribute, it would be nice to comment all non obvious parts of your source code, and including links to a clear documentation on the algorithms
