@@ -27,7 +27,7 @@ None, Learn4j doesn't use any other libraries!
 
 
 ### Read the wiki
-[Click here to visit the wiki and start coding](https://github.com/hugo4715/Learn4J/wiki)
+[Click here to visit the wiki and start coding](http://bit.ly/Learn4J-Wiki)
 
 ### Javadoc
 [The javadoc is available online here.](http://bit.ly/learn4j)
