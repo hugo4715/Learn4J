@@ -1,6 +1,12 @@
 # Learn4J
 The java Machine Learning Library
-
+## Features
+ - Dataset loading
+ - Classifiers
+ - Clusterers
+ - Custom distance measures
+ - Highly documented
+ 
 ## Getting Started
 
 ### Libraries needed
