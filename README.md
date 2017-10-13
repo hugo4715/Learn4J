@@ -7,7 +7,18 @@ The java Machine Learning Library
 None, Learn4j doesn't use any other libraries!
 
 ### Installing With Maven
-TODO
+    <repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+    </repository>
+    
+    <dependency>
+	    <groupId>com.github.hugo4715</groupId>
+	    <artifactId>Learn4J</artifactId>
+	    <version>-SNAPSHOT</version>
+	 </dependency>
+
+
 
 ### Read the wiki
 Click here to visit the wiki and start coding
