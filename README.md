@@ -14,7 +14,7 @@ Click here to visit the wiki and start coding
 
 
 ## Contributing
-If you contribute, it would be nice to comment all non obvious parts of your source code.
+If you contribute, it would be nice to comment all non obvious parts of your source code, and including links to a clear documentation on the algorithms
 
 ## Authors
 hugo4715
