@@ -24,7 +24,7 @@ None, Learn4j doesn't use any other libraries!
 [Click here to visit the wiki and start coding](https://github.com/hugo4715/Learn4J/wiki)
 
 ### Javadoc
-[The javadoc is available online here.](https://hugo4715.github.io/Learn4J/apidocs/)
+[The javadoc is available online here.](http://bit.ly/learn4j)
 
 ## Contributing
 If you contribute, it would be nice to comment all non obvious parts of your source code, and including links to a clear documentation on the algorithms
