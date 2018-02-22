@@ -1,5 +1,5 @@
 # Learn4J
-The java Machine Learning Library
+A java Machine Learning Library
 ## Features
  - Dataset loading
  - Classifiers
