@@ -1,5 +1,5 @@
 # Learn4J
-A java Machine Learning Library
+A simple java Machine Learning Library, made with love to learn the concepts.
 ## Features
  - Dataset loading
  - Classifiers
@@ -27,7 +27,7 @@ None, Learn4j doesn't use any other libraries!
 
 
 ### Read the wiki
-[Click here to visit the wiki and start coding](http://bit.ly/Learn4J-Wiki)
+[Click here to visit the wiki and start coding](http://bit.ly/Learn4J-Wiki) (Currently empty)
 
 ### Javadoc
 [The javadoc is available online here.](http://bit.ly/learn4j)
