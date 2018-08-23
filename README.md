@@ -2,15 +2,15 @@
 A simple java Machine Learning Library, made with love to learn the concepts.
 ## Features
  - Dataset loading
- - Classifiers
- - Clusterers
+ - Classifiers (KNearest, Perceptron, NearestCentroid)
+ - Clusterers (DBSCAN, KMeams, KMeansPlusPlus, SingleLinkage, CompleteLinkage)
  - Custom distance measures
- - Highly documented
+ - Documented
  
 ## Getting Started
 
 ### Libraries needed
-None, Learn4j doesn't use any other libraries!
+None, Learn4j doesn't use any other libraries! (JFreeChart is only needed for the examples)
 
 ### Installing With Maven
     <repository>
@@ -23,11 +23,6 @@ None, Learn4j doesn't use any other libraries!
 	    <artifactId>Learn4J</artifactId>
 	    <version>-SNAPSHOT</version>
 	 </dependency>
-
-
-
-### Read the wiki
-[Click here to visit the wiki and start coding](http://bit.ly/Learn4J-Wiki) (Currently empty)
 
 ### Javadoc
 [The javadoc is available online here.](http://bit.ly/learn4j)
