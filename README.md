@@ -10,7 +10,7 @@ A simple java Machine Learning Library, made with love to learn the concepts.
 ## Getting Started
 
 ### Libraries needed
-Learn4j doesn't use any other libraries! (JFreeChart is only needed for the examples, and lombk is a code generator)
+Learn4j doesn't use any other libraries! (JFreeChart is only needed for the examples, and lombok is a code generator)
 
 ### Installing With Maven
     <repository>
